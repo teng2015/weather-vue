@@ -17,17 +17,24 @@ new Vue({
   {
     getData: function()
     {
-      $('.uil-sunny.css').show();
+      $('.uil-sunny-circle').show();
+      $('#city').hide();
+              $('#wind').hide();
+      $('#img').hide();
       var self = this;
       function success(pos){
         var latitude  = pos.coords.latitude;
         var longitude = pos.coords.longitude;
       $.getJSON('http://api.openweathermap.org/data/2.5/find?lat='+latitude+'&lon='+longitude+'&cnt=10&appid=55e71b08f9edeb8c17b7eb7f381bf15d&units=metric', function(data){
         self.$set('data', data);
+              $('.uil-sunny-circle').remove();
+              $('.uil-sunny-light').remove();
+              $('#city').show();
+              $('#wind').show();
+              $('#img').show();
       })
       }
       navigator.geolocation.getCurrentPosition(success);
-      $('.uil-sunny.css').hide();
     },
     change: function()
     {

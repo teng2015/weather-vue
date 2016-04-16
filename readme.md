@@ -1,6 +1,11 @@
 #Find the Weather 
 ##VueJS & Open Weather Map API 
-Super simple app that finds the weather based on your input. Ideally would like to integrate location detection, but for now this will suffice. 
+VueJS application that detects a users location based on geolocation. It then provides them with some weather information, in both celcius and fahrenheit. 
+
+The OWM API is extensive, and more information could be provided.
+
+##Notes for extension 
+Change the API to NASA and allow user input on how environmental factors affect health/psychology. 
 
 ###Open Weather Map API 
 To see what else can be added, search the OWM API docs. 
