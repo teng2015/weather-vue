@@ -17,7 +17,7 @@
   <header id="top" class="header" style="background: url('{{img.webcams.webcam[0].daylight_preview_url}}'); background-size: cover;">
         <div class="text-vertical-center">
           <h1>What's the temperature?</h1>
-          
+          {{data | json}}
           <hr class="small">
           <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png">
             <h2>{{data.name}}</h2>
@@ -25,9 +25,6 @@
           <h4 v-if="format"><a style="cursor: pointer; color: white" v-on:click="change">{{data.main.temp | celcius}}</a></h4>
           <h4 v-if="!format"><a v-on:click="change" style="cursor: pointer; color: white">{{data.main.temp | fahrenheit}}</a></h4>
             <br>
-          <input v-on:keyup.enter="getData" v-model="city" type="text" class="css-input" value="Search your City">
-          <br>
-            <button v-on:click="getData" class="btn btn-dark btn-lg">Search</a>
         </div>
     </header>
 </body>
