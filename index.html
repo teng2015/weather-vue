@@ -14,9 +14,10 @@
 <link rel="stylesheet" href="style.css"></link>
 </head>
 <body id="app">
-  <header id="top" class="header" style="background: url('http://media.gettyimages.com/photos/high-angle-view-of-york-minster-and-residential-district-against-sky-picture-id597691443'); background-size: cover;">
+  <header id="top" class="header" style="background: url('{{img.webcams.webcam[0].daylight_preview_url}}'); background-size: cover;">
         <div class="text-vertical-center">
           <h1>What's the temperature?</h1>
+          
           <hr class="small">
           <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png">
             <h2>{{data.name}}</h2>
