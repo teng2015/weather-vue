@@ -1,0 +1,33 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css"></link>
+</head>
+<body id="app">
+  <header id="top" class="header" style="background: url('http://media.gettyimages.com/photos/high-angle-view-of-york-minster-and-residential-district-against-sky-picture-id597691443'); background-size: cover;">
+        <div class="text-vertical-center">
+          <h1>What's the temperature?</h1>
+          <hr class="small">
+          <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png">
+            <h2>{{data.name}}</h2>
+            <h3>{{data.weather[0].description | capitalize}}</h3>
+          <h4 v-if="format"><a style="cursor: pointer; color: white" v-on:click="change">{{data.main.temp | celcius}}</a></h4>
+          <h4 v-if="!format"><a v-on:click="change" style="cursor: pointer; color: white">{{data.main.temp | fahrenheit}}</a></h4>
+            <br>
+          <input v-on:keyup.enter="getData" v-model="city" type="text" class="css-input" value="Search your City">
+          <br>
+            <button v-on:click="getData" class="btn btn-dark btn-lg">Search</a>
+        </div>
+    </header>
+</body>
+<script src="app.js"></script>
