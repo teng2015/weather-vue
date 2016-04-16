@@ -1,6 +1,6 @@
 #Find the Weather 
 ##VueJS & Open Weather Map API 
-VueJS application that detects a users location based on geolocation. It then provides them with some weather information, in both celcius and fahrenheit. 
+VueJS application that detects a users location based on geolocation. It then provides them with some weather information, in both celcius and fahrenheit. An example can be found [here] (http://s.codepen.io/jw1540/debug/revLaz)
 
 The OWM API is extensive, and more information could be provided.
 
